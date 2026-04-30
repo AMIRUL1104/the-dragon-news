@@ -1,4 +1,5 @@
 "use client";
+import { authClient } from "@/lib/auth-client";
 import { useForm } from "react-hook-form";
 
 function RegisterPage() {
@@ -8,9 +9,21 @@ function RegisterPage() {
     formState: { errors },
   } = useForm();
 
-  const handleRegisterData = (data) => {
+  const handleRegisterData = async (userdata) => {
     // এখানে আপনার রেজিস্ট্রেশন লজিক বা API কল হবে
-    console.log("Register Data:", data);
+    console.log("Register Data:", userdata);
+
+    const { name, photoURL, email, password } = userdata;
+
+    const { data, error } = await authClient.signUp.email({
+      name: name, // required
+      email: email, // required
+      password: password, // required
+      image: photoURL,
+      callbackURL: "/",
+    });
+
+    console.log(data, error);
   };
 
   return (
