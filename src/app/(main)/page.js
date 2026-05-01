@@ -1,3 +1,6 @@
+import GithubSignIn from "@/components/buttons/GithubSignIn";
+import GoogleSignIn from "@/components/buttons/GoogleSignIn";
+import { authClient } from "@/lib/auth-client";
 import Image from "next/image";
 import Link from "next/link";
 const fetchCategory = async () => {
@@ -105,13 +108,9 @@ export default async function Home() {
         <h2 className="font-medium">Login With</h2>
 
         <div className="flex flex-col gap-3">
-          <button className="btn bg-white text-black border">
-            Login with Google
-          </button>
+          <GoogleSignIn />
 
-          <button className="btn bg-black text-white border-black">
-            Login with GitHub
-          </button>
+          <GithubSignIn />
         </div>
 
         <div className="flex flex-col gap-3">

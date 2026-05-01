@@ -22,8 +22,12 @@ function RegisterPage() {
       image: photoURL,
       callbackURL: "/",
     });
-
-    console.log(data, error);
+    if (error) {
+      alert(error.message);
+    }
+    if (data) {
+      alert("Signup Successful");
+    }
   };
 
   return (
