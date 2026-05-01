@@ -28,7 +28,7 @@ export default async function Home() {
       <div className="lg:col-span-1">
         <h2 className="text-lg font-medium mb-4">All Category</h2>
 
-        <ul className="flex flex-col gap-2">
+        <ul className="flex flex-col max-sm:flex-row hover:overflow-auto overflow-hidden gap-2">
           {categories.map((category) => (
             <li
               className="text-gray-500 hover:bg-gray-300 rounded-sm px-2 py-1"

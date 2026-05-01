@@ -9,7 +9,7 @@ function Navbar() {
   const { data: session, isPending } = authClient.useSession();
 
   const userInfo = session?.user;
-  console.log(isPending, userInfo, "session");
+  // console.log(isPending, userInfo, "session");
 
   return (
     <div className="  container mx-auto flex items-center justify-between   ">
